@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ayam Crispy Terenak - Menyajikan ayam crispy, geprek, dan menu spesial lainnya dengan bumbu rahasia. Pesan online sekarang!">
+  <meta name="keywords" content="ayam crispy, ayam geprek, makanan enak, kuliner, ayam krispi, warung makan, makanan kekinian">
+  <meta name="author" content="Ayam Crispy Terenak">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ayamcrispyterenak.com/">
+  <meta property="og:title" content="Ayam Crispy Terenak - Gurih, Renyah, dan Nikmat">
+  <meta property="og:description" content="Ayam crispy dengan bumbu rahasia turun temurun, digoreng dengan teknik khusus untuk rasa yang sempurna.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ayamcrispyterenak.com/">
+  <meta property="twitter:title" content="Ayam Crispy Terenak - Gurih, Renyah, dan Nikmat">
+  <meta property="twitter:description" content="Ayam crispy dengan bumbu rahasia turun temurun, digoreng dengan teknik khusus untuk rasa yang sempurna.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍗</text></svg>">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Ayam Crispy Terenak",
+    "image": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1200&q=80",
+    "description": "Ayam crispy dengan bumbu rahasia turun temurun, digoreng dengan teknik khusus untuk rasa yang sempurna.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Raya Kuliner No. 123",
+      "addressLocality": "Jakarta",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "12345"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-6.200000",
+      "longitude": "106.816666"
+    },
+    "openingHours": "Mo-Su 09:00-21:00",
+    "telephone": "+6281234567890",
+    "priceRange": "Rp 15.000 - Rp 50.000",
+    "servesCuisine": ["Ayam Crispy", "Ayam Geprek", "Makanan Indonesia"]
+  }
+  </script>
+  
+  <title>Ayam Crispy Terenak - Gurih, Renyah, dan Nikmat | Pesan Sekarang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#eab308',
+            secondary: '#dc2626',
+            accent: '#16a34a',
+            dark: '#1f2937',
+            light: '#f8fafc'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    }
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 50%;
+      background-color: #eab308;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .feature-icon:hover {
+      transform: scale(1.1);
+      background-color: #dc2626;
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    .sticky-nav.scrolled {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+    .menu-card { 
+      transition: all 0.3s ease; 
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .menu-card img {
+      transition: transform 0.5s ease;
+    }
+    .menu-card:hover img {
+      transform: scale(1.05);
+    }
+    .price-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #eab308;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-card {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: -1rem;
+      left: 1rem;
+      font-size: 4rem;
+      color: #eab308;
+      opacity: 0.2;
+      font-family: Georgia, serif;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 3rem;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: #eab308;
+      border-radius: 2px;
+    }
+    .footer-links a {
+      transition: all 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #eab308;
+      transform: translateX(5px);
+    }
+    .animate-bounce-slow {
+      animation: bounce 3s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-10px);}
+    }
+  </style>
+</head>
+<body class="font-sans bg-light text-dark">
+
+  <!-- Navigation -->
+  <nav class="sticky-nav" id="navbar">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center py-4">
+        <a href="#" class="text-2xl font-bold text-primary flex items-center">
+          <span class="text-3xl mr-1">🍗</span>
+          <span class="hidden sm:inline">AYAM<span class="text-secondary">CRISPY</span></span>
+        </a>
+        <div class="hidden md:flex space-x-10">
+          <a href="#home" class="hover:text-primary font-medium transition-colors duration-300">Home</a>
+          <a href="#menu" class="hover:text-primary font-medium transition-colors duration-300">Menu</a>
+          <a href="#tentang" class="hover:text-primary font-medium transition-colors duration-300">Tentang</a>
+          <a href="#testimoni" class="hover:text-primary font-medium transition-colors duration-300">Testimoni</a>
+          <a href="#kontak" class="hover:text-primary font-medium transition-colors duration-300">Kontak</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 bg-white rounded-lg shadow-lg mt-2 absolute left-6 right-6 z-50">
+        <a href="#home" class="block py-3 px-6 hover:bg-primary hover:text-white transition-colors duration-300">Home</a>
+        <a href="#menu" class="block py-3 px-6 hover:bg-primary hover:text-white transition-colors duration-300">Menu</a>
+        <a href="#tentang" class="block py-3 px-6 hover:bg-primary hover:text-white transition-colors duration-300">Tentang</a>
+        <a href="#testimoni" class="block py-3 px-6 hover:bg-primary hover:text-white transition-colors duration-300">Testimoni</a>
+        <a href="#kontak" class="block py-3 px-6 hover:bg-primary hover:text-white transition-colors duration-300">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero-bg text-white py-32">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-bounce-slow">Ayam Crispy Terenak di Kota Ini!</h1>
+      <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">Dibuat dengan bumbu rahasia turun temurun, digoreng dengan teknik khusus untuk menghasilkan ayam yang gurih, renyah, dan nikmat di setiap gigitan.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/6281234567890" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+          <i class="fab fa-whatsapp mr-2 text-xl"></i> Pesan Sekarang
+        </a>
+        <a href="#menu" class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105">
+          Jelajahi Menu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Keunggulan -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 section-title">Mengapa Memilih Kami?</h2>
+      <div class="grid md:grid-cols-3 gap-10 text-center">
+        <div class="p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-utensils text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Bumbu Rahasia</h3>
+          <p class="text-gray-600">Dibuat dengan resep turun temurun yang telah teruji selama puluhan tahun.</p>
+        </div>
+        <div class="p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-leaf text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Bahan Segar</h3>
+          <p class="text-gray-600">Menggunakan ayam pilihan segar dengan kualitas terbaik setiap harinya.</p>
+        </div>
+        <div class="p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-truck text-2xl"></i>
+          </div>
+          <h3 class="font-semibold text-xl mb-3">Gratis Antar</h3>
+          <p class="text-gray-600">Gratis ongkir untuk area terdekat dengan pengemasan khusus agar tetap hangat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 section-title">Menu Andalan Kami</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Item menu (contoh 6 item) -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Ayam Crispy Original">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 18.000</span>
+            <h3 class="font-semibold text-lg mb-2">Ayam Crispy Original</h3>
+            <p class="text-gray-600 text-sm">Ayam crispy dengan balutan tepung special yang renyah dan gurih.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1630019852325-56ddb38a937e?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Ayam Geprek Sambal Matah">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 22.000</span>
+            <h3 class="font-semibold text-lg mb-2">Ayam Geprek Sambal Matah</h3>
+            <p class="text-gray-600 text-sm">Ayam crispy digeprek dengan sambal matah khas Bali yang segar.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Ayam BBQ">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 20.000</span>
+            <h3 class="font-semibold text-lg mb-2">Ayam Crispy BBQ</h3>
+            <p class="text-gray-600 text-sm">Ayam crispy dengan saus BBQ homemade yang manis dan sedikit smoky.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1626645735466-5f6e85e125e9?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Nasi Ayam Crispy Paket">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 25.000</span>
+            <h3 class="font-semibold text-lg mb-2">Nasi Ayam Crispy Paket</h3>
+            <p class="text-gray-600 text-sm">Paket lengkap dengan nasi, ayam crispy, lalapan, dan es teh.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1606756790138-26d94b62b7a9?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Ayam Keju Leleh">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 28.000</span>
+            <h3 class="font-semibold text-lg mb-2">Ayam Crispy Keju Leleh</h3>
+            <p class="text-gray-600 text-sm">Ayam crispy dengan saus keju leleh yang gurih dan creamy.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden menu-card">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1603048297172-92d9275480a0?auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover" alt="Ayam Pedas Level">
+          </div>
+          <div class="p-6 relative">
+            <span class="price-tag">Rp 23.000</span>
+            <h3 class="font-semibold text-lg mb-2">Ayam Crispy Pedas Level</h3>
+            <p class="text-gray-600 text-sm">Ayam crispy dengan level pedas yang bisa disesuaikan selera.</p>
+            <button class="mt-4 bg-primary hover:bg-secondary text-white px-4 py-2 rounded-full text-sm transition-colors duration-300">Pesan Sekarang</button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300">
+          Lihat Menu Lengkap <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang -->
+  <section id="tentang" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1000&q=80" class="rounded-xl shadow-lg w-full" alt="Tentang Ayam Crispy Terenak">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6 section-title inline-block">Tentang Kami</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Ayam Crispy Terenak hadir dengan resep keluarga turun temurun yang telah disempurnakan selama tiga generasi. 
+            Setiap potongan ayam kami dipilih dengan teliti dan dimarinasi dengan bumbu rahasia selama 24 jam untuk 
+            menghasilkan cita rasa yang mendalam dan konsisten.
+          </p>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Kami menggunakan minyak goreng berkualitas tinggi yang diganti secara berkala untuk memastikan ayam crispy 
+            yang kami sajikan tidak hanya enak tetapi juga sehat untuk dinikmati seluruh keluarga.
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="bg-primary text-white p-3 rounded-full">
+              <i class="fas fa-medal text-xl"></i>
+            </div>
+            <p class="font-semibold">Terpercaya sejak 2010</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section id="testimoni" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 section-title">Apa Kata Pelanggan?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow testimonial-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3">S</div>
+            <div>
+              <h4 class="font-semibold">Siti Rahayu</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">“Ayamnya super renyah dan gurih. Anak-anak suka banget! Sekarang jadi langganan tetap keluarga kami.”</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow testimonial-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3">A</div>
+            <div>
+              <h4 class="font-semibold">Andi Wijaya</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">“Paket nasi ayam crispy enak banget, sambalnya mantap. Porsinya juga cukup untuk yang lapar.”</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow testimonial-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3">R</div>
+            <div>
+              <h4 class="font-semibold">Rina Santoso</h4>
+              <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">“Pengantaran cepat, ayam masih hangat. Top markotop! Pelayanannya ramah dan profesional.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16 section-title">Hubungi Kami</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <p class="mb-6 text-gray-600 text-lg">Siap pesan ayam crispy terenak? Hubungi kami sekarang!</p>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Alamat</h4>
+                <p class="text-gray-600">Jl. Raya Kuliner No. 123, Jakarta</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Telepon</h4>
+                <p class="text-gray-600">+62 812-3456-7890</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Jam Operasional</h4>
+                <p class="text-gray-600">Setiap hari 09:00 - 21:00 WIB</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/6281234567890" target="_blank" class="mt-8 inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105">
+            <i class="fab fa-whatsapp mr-2"></i> Chat WhatsApp
+          </a>
+        </div>
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.81956135063955!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6e449c18f3bdf51e!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1648012293259!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-primary">AYAM<span class="text-white">CRISPY</span></h3>
+          <p class="text-gray-400">Menyajikan ayam crispy terenak dengan cita rasa yang tak terlupakan sejak 2010.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Tautan Cepat</h4>
+          <ul class="space-y-2 footer-links">
+            <li><a href="#home" class="text-gray-400">Home</a></li>
+            <li><a href="#menu" class="text-gray-400">Menu</a></li>
+            <li><a href="#tentang" class="text-gray-400">Tentang Kami</a></li>
+            <li><a href="#testimoni" class="text-gray-400">Testimoni</a></li>
+            <li><a href="#kontak" class="text-gray-400">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Jam Operasional</h4>
+          <p class="text-gray-400">Senin - Minggu</p>
+          <p class="text-gray-400">09:00 - 21:00 WIB</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2025 Ayam Crispy Terenak. All rights reserved.</p>
+        <p class="text-gray-400 text-sm mt-4 md:mt-0">
+          Developed by <a href="#" class="text-primary hover:underline">MHTeams</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Toggle menu mobile
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+
+    // Sticky navbar effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled', 'shadow-lg');
+      } else {
+        navbar.classList.remove('scrolled', 'shadow-lg');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Close mobile menu if open
+          document.getElementById('mobile-menu').classList.add('hidden');
+          
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
